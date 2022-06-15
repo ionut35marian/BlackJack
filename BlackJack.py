@@ -99,7 +99,7 @@ def hit_or_stand(deck,hand):
 def show_some(player,dealer):
     print("\n Dealer's Hand: ")
     print("First card hidden")
-    print(dealer.cards[1]) #cards din clasa Hand
+    print(dealer.cards[1]) 
     print("\n Player's hand: ")
     for card in player.cards:
         print(card)
@@ -113,3 +113,18 @@ def show_all(player,dealer):
     for card in player.cards:
         print(card)
     print(f"Value of Player's hand is: {player.value}")
+
+def player_busts(player,dealer,chips):
+    print("Player busted") #in cazul in care dealeru are din start 21 de puncte
+    chips.lose_bet()
+def player_wins(player,dealer,chips):
+    print("Player wins the round")  #in cazul in care avem 21 de puncte din start
+    chips.win_bet()
+def dealer_busts(player,dealer,chips):
+    print("Player wins the round! Dealer busted") #in cazul in care dealeru are peste 21 de puncte
+    chips.win_bet()
+def dealer_wins(player,dealer,chips):
+    print("Dealer wins") #in cazul in care dealeru bate playeru la nr. de puncte
+    chips.lose_bet()
+def push(player,dealer):
+    print("Dealer and player tie! Push")
