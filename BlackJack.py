@@ -95,3 +95,21 @@ def hit_or_stand(deck,hand):
             print("Sorry, please try again")
             continue
         break
+
+def show_some(player,dealer):
+    print("\n Dealer's Hand: ")
+    print("First card hidden")
+    print(dealer.cards[1]) #cards din clasa Hand
+    print("\n Player's hand: ")
+    for card in player.cards:
+        print(card)
+
+def show_all(player,dealer):
+    print("\n Dealer's hand: ")
+    for card in dealer.cards:
+        print(card)
+    print(f"Value of Dealer's hand is: {dealer.value}")
+    print("\n Player's hand: ")
+    for card in player.cards:
+        print(card)
+    print(f"Value of Player's hand is: {player.value}")
