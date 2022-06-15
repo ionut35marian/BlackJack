@@ -27,3 +27,9 @@ class Deck:
     def deal(self):
         single_card=self.deck.pop()
         return single_card
+
+class Hand:
+    def __init__(self):
+        self.cards = [] 
+        self.value = 0   
+        self.aces = 0
