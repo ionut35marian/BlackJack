@@ -3,7 +3,7 @@ ranks=('Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Qu
 values={'Two':2,'Three':3,'Four':4,'Five':5,'Six':6,'Seven':7,'Eight':8,'Nine':9,'Ten':10,'Jack':10,'Queen':10,'King':10,'Ace':11}
 
 import random
-
+playing=True
 class  Card:
     def __init__(self,suit,rank):
         self.suit=suit
@@ -81,3 +81,17 @@ def hit(deck,hand):
     single_card=deck.deal()
     hand.add_card(single_card)
     hand.adjust_for_ace()
+
+def hit_or_stand(deck,hand):
+    global playing
+    while True:
+        x=input("Hit or Stand? Enter H or S")
+        if x[0].lower()=="h":
+            hit(deck,hand) #functia de la step6
+        elif x[0].lower()=="s":
+            print("Player stands, dealer's turn")
+            playing=False
+        else:
+            print("Sorry, please try again")
+            continue
+        break
